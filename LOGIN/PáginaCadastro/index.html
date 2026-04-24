@@ -1,0 +1,49 @@
+<!DOCTYPE html> <!-- define o tipo do documento como HTML5 -->
+<html lang="pt-BR"> <!-- define o idioma da página como português do Brasil -->
+<head>
+    <meta charset="UTF-8"> <!-- define codificação de caracteres (acentos, etc) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- deixa responsivo em celular -->
+
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"> <!-- biblioteca de ícones -->
+    <link rel="stylesheet" href="style.css"> <!-- conecta seu arquivo CSS -->
+
+    <title>DevClub Login</title> <!-- título da aba do navegador -->
+</head>
+
+<body>
+    <main class="container"> <!-- container principal da página -->
+        <form> <!-- formulário de login -->
+
+            <h1>Login DevClub</h1> <!-- título do formulário -->
+
+            <div class="input-box"> <!-- caixa do input de usuário -->
+                <input placeholder="Usuário" type="text" name="email"> <!-- campo de texto -->
+                <i class='bx bxs-user'></i> <!-- ícone de usuário -->
+            </div>
+
+            <div class="input-box"> <!-- caixa do input de senha -->
+                <input placeholder="Senha" type="password" name="senha"> <!-- campo de senha (oculta texto) -->
+                <i class='bx bxs-lock-alt'></i> <!-- ícone de cadeado -->
+            </div>
+
+            <div class="remember-forgot"> <!-- seção lembrar senha -->
+                <label>
+                    <input type="checkbox"> <!-- checkbox -->
+                    Lembrar-me <!-- texto do checkbox -->
+                </label>
+                <a href="#">Esqueci minha senha</a> <!-- link de recuperação -->
+            </div>
+
+            <button type="submit" class="login">Entrar</button> <!-- botão de envio -->
+
+            <div class="register-link"> <!-- seção de cadastro -->
+                <p>
+                    Não tem uma conta? 
+                    <a href="#">Registrar-se</a> <!-- link para cadastro -->
+                </p>
+            </div>
+
+        </form>
+    </main>
+</body>
+</html>

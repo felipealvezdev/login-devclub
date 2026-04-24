@@ -1,0 +1,138 @@
+/* Reset básico: remove margens/paddings padrão e define box model */
+* {
+    margin: 0; /* remove margens padrão */
+    padding: 0; /* remove espaçamentos internos padrão */
+    box-sizing: border-box; /* inclui padding e border dentro do tamanho total */
+    font-family: 'Poppins', sans-serif; /* define a fonte padrão */
+}
+
+body {
+    display: flex; /* ativa o Flexbox */
+    justify-content: center; /* centraliza horizontalmente */
+    align-items: center; /* centraliza verticalmente */
+    min-height: 100vh; /* ocupa toda altura da tela */
+    background-image: url('./imagem.jpg'); /* imagem de fundo */
+    background-size: cover; /* faz a imagem cobrir toda a tela */
+    background-position: center; /* centraliza a imagem */
+}
+
+/* Container do login (caixa principal) */
+.container {
+    width: 420px; /* largura fixa */
+    background-color: transparent; /* fundo transparente */
+    border: 2px solid rgba(255, 255, 255, 0.2); /* borda branca suave */
+    border-radius: 10px; /* cantos arredondados */
+    color: #fff; /* cor do texto */
+    padding: 30px 40px; /* espaçamento interno */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2); /* sombra leve */
+    backdrop-filter: blur(10px); /* efeito de vidro (glassmorphism) */
+}
+
+/* Título */
+.container h1 {
+    font-size: 36px; /* tamanho grande */
+    text-align: center; /* centraliza texto */
+}
+
+/* Caixa de input (usuário e senha) */
+.input-box {
+    position: relative; /* permite posicionar o ícone dentro */
+    width: 100%; /* ocupa toda largura */
+    height: 50px; /* altura fixa */
+    margin: 30px 0; /* espaçamento vertical */
+}
+
+/* Campo de input */
+.input-box input {
+    width: 100%; /* ocupa toda largura */
+    height: 100%; /* ocupa toda altura */
+    background: transparent; /* fundo transparente */
+    border: 2px solid rgba(255, 255, 255, 0.2); /* borda suave */
+    border-radius: 40px; /* formato arredondado */
+    outline: none; /* remove borda azul ao clicar */
+    font-size: 16px; /* tamanho do texto */
+    color: #fff; /* cor do texto digitado */
+    padding: 20px 45px 20px 20px; /* espaço interno (direita maior pro ícone) */
+}
+
+/* Placeholder (texto dentro do input) */
+.input-box input::placeholder {
+    color: #C5C5C5; /* cor cinza */
+}
+
+/* Ícone dentro do input */
+.input-box i {
+    position: absolute; /* posiciona dentro da caixa */
+    right: 20px; /* distância da direita */
+    top: 50%; /* centraliza verticalmente */
+    transform: translateY(-50%); /* ajuste fino de centralização */
+    font-size: 20px; /* tamanho do ícone */
+    color: #C5C5C5; /* cor do ícone */
+}
+
+/* Seção lembrar senha */
+.remember-forgot {
+    display: flex; /* organiza lado a lado */
+    justify-content: space-between; /* separa os itens */
+    align-items: center; /* alinha verticalmente */
+    margin: 15px 0; /* espaçamento */
+}
+
+/* Checkbox */
+.remember-forgot label input {
+    accent-color: #fff; /* cor do checkbox */
+    margin-right: 5px; /* espaço entre checkbox e texto */
+}
+
+/* Link "esqueci senha" */
+.remember-forgot a {
+    color: #C5C5C5; /* cor do link */
+    text-decoration: none; /* remove sublinhado */
+}
+
+/* Hover do link */
+.remember-forgot a:hover {
+    text-decoration: underline; /* sublinha ao passar o mouse */
+}
+
+/* Botão de login */
+.login {
+    width: 100%; /* ocupa toda largura */
+    height: 50px; /* altura fixa */
+    background-color: transparent; /* transparente */
+    border: none; /* sem borda */
+    border-radius: 40px; /* arredondado */
+    outline: none; /* remove contorno */
+    font-size: 16px; /* tamanho do texto */
+    color: #333; /* cor do texto */
+    cursor: pointer; /* cursor de clique */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* sombra leve */
+    margin: 15px 0; /* espaçamento */
+}
+
+/* Hover do botão */
+.login:hover {
+    background-color: transparent; /* mantém transparente */
+    border: 2px solid rgba(255, 255, 255, 0.2); /* adiciona borda */
+    color: #fff; /* muda cor do texto */
+    transition: 0.3s; /* animação suave */
+}
+
+/* Texto de cadastro */
+.register-link {
+    font-size: 14px; /* texto menor */
+    text-align: center; /* centraliza */
+    margin: 20px 0 15px; /* espaçamento */
+}
+
+/* Link de cadastro */
+.register-link a {
+    color: #C5C5C5; /* cor do link */
+    text-decoration: none; /* remove sublinhado */
+    font-weight: 600; /* deixa mais forte */
+}
+
+/* Hover do link */
+.register-link a:hover {
+    text-decoration: underline; /* sublinha ao passar o mouse */
+}
