@@ -1,0 +1,142 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Tela inteira */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+/* Body centralizado */
+body {
+    font-family: 'Poppins', sans-serif;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100vh;
+}
+
+/* Vídeo de fundo */
+#bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Container */
+.container {
+    width: 90%;
+    max-width: 400px;
+
+    padding: 30px;
+    border-radius: 10px;
+
+    color: #fff;
+
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+}
+
+/* Título */
+.container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Input */
+.input-box {
+    position: relative;
+    width: 100%;
+    height: 45px;
+    margin: 20px 0;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+
+    border: none;
+    outline: none;
+
+    border-radius: 30px;
+    padding: 0 40px 0 15px;
+
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+}
+
+/* Placeholder */
+.input-box input::placeholder {
+    color: #ddd;
+}
+
+/* Ícone */
+.input-box i {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ddd;
+}
+
+/* Botão */
+.login {
+    width: 100%;
+    height: 45px;
+
+    border: none;
+    border-radius: 30px;
+
+    background: #fff;
+    color: #333;
+
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* Hover simples */
+.login:hover {
+    background: #ddd;
+}
+
+/* Mensagem */
+.mensagem {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 14px;
+    display: none;
+}
+
+.mensagem.sucesso {
+    color: #00ffae;
+}
+
+.mensagem.erro {
+    color: #ff4d4d;
+}
+
+/* Link voltar */
+.register-link {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.register-link a {
+    color: #ccc;
+    text-decoration: none;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}

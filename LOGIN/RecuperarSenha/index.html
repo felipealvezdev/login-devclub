@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Fonte -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <!-- Ícones -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <title>Recuperar Senha</title>
+</head>
+
+<body>
+
+    <!-- VÍDEO DE FUNDO -->
+    <video autoplay muted loop id="bg-video">
+        <source src="Video.mp4" type="video/mp4">
+    </video>
+
+    <main class="container">
+        <form id="form-recuperacao">
+
+            <h1>Recuperar Senha</h1>
+
+            <div class="input-box">
+                <input 
+                    id="email" 
+                    type="email" 
+                    name="email" 
+                    placeholder="Email" 
+                    required
+                >
+                <i class='bx bxs-user'></i>
+            </div>
+
+            <button type="submit" class="login" id="btn">
+                Enviar Email
+            </button>
+
+            <p class="mensagem" id="mensagem"></p>
+
+            <div class="register-link">
+                <p>
+                    Lembrou a senha? 
+                    <a href="/LOGIN/PáginaCadastro/log.html">Voltar ao login</a>
+                </p>
+            </div>
+
+        </form>
+    </main>
+</body>
+
+    <script>
+        const form = document.getElementById("form-recuperacao");
+        const emailInput = document.getElementById("email");
+        const mensagem = document.getElementById("mensagem");
+        const btn = document.getElementById("btn");
+
+        form.addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            const email = emailInput.value.trim();
+
+            if (!email || !email.includes("@") || !email.includes(".")) {
+                mensagem.style.display = "block";
+                mensagem.className = "mensagem erro";
+                mensagem.textContent = "Digite um email válido.";
+                return;
+            }
+
+            btn.classList.add("loading");
+            mensagem.style.display = "none";
+
+            setTimeout(() => {
+                btn.classList.remove("loading");
+
+                mensagem.style.display = "block";
+                mensagem.className = "mensagem sucesso";
+                mensagem.textContent = "Email enviado com sucesso!";
+
+                form.reset();
+
+                setTimeout(() => {
+                    window.location.href = "login.html";
+                }, 2000);
+
+            }, 2000);
+        });
+    </script>

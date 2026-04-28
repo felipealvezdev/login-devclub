@@ -1,138 +1,182 @@
-/* Reset básico: remove margens/paddings padrão e define box model */
+/* Reset */
 * {
-    margin: 0; /* remove margens padrão */
-    padding: 0; /* remove espaçamentos internos padrão */
-    box-sizing: border-box; /* inclui padding e border dentro do tamanho total */
-    font-family: 'Poppins', sans-serif; /* define a fonte padrão */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+/* Tela inteira */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+/* Body centralizado */
 body {
-    display: flex; /* ativa o Flexbox */
-    justify-content: center; /* centraliza horizontalmente */
-    align-items: center; /* centraliza verticalmente */
-    min-height: 100vh; /* ocupa toda altura da tela */
-    background-image: url('./imagem.jpg'); /* imagem de fundo */
-    background-size: cover; /* faz a imagem cobrir toda a tela */
-    background-position: center; /* centraliza a imagem */
+    font-family: 'Poppins', sans-serif;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100vh;
+    width: 100%;
 }
 
-/* Container do login (caixa principal) */
+/* Vídeo de fundo */
+#bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    z-index: -1;
+}
+
+#bg-video {
+    filter: brightness(0.6) blur(2px);
+}
+
+/* Overlay escuro (opcional, mas melhora MUITO) */
+body::before {
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 0;
+}
+
+/* Container */
 .container {
-    width: 420px; /* largura fixa */
-    background-color: transparent; /* fundo transparente */
-    border: 2px solid rgba(255, 255, 255, 0.2); /* borda branca suave */
-    border-radius: 10px; /* cantos arredondados */
-    color: #fff; /* cor do texto */
-    padding: 30px 40px; /* espaçamento interno */
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2); /* sombra leve */
-    backdrop-filter: blur(10px); /* efeito de vidro (glassmorphism) */
+    position: relative;
+    z-index: 1;
+
+    width: 90%;
+    max-width: 420px;
+
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+
+    padding: 30px 40px;
+    color: #fff;
+
+    backdrop-filter: blur(12px);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
 }
 
 /* Título */
 .container h1 {
-    font-size: 36px; /* tamanho grande */
-    text-align: center; /* centraliza texto */
+    font-size: 32px;
+    text-align: center;
 }
 
-/* Caixa de input (usuário e senha) */
+/* Input */
 .input-box {
-    position: relative; /* permite posicionar o ícone dentro */
-    width: 100%; /* ocupa toda largura */
-    height: 50px; /* altura fixa */
-    margin: 30px 0; /* espaçamento vertical */
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 25px 0;
 }
 
-/* Campo de input */
 .input-box input {
-    width: 100%; /* ocupa toda largura */
-    height: 100%; /* ocupa toda altura */
-    background: transparent; /* fundo transparente */
-    border: 2px solid rgba(255, 255, 255, 0.2); /* borda suave */
-    border-radius: 40px; /* formato arredondado */
-    outline: none; /* remove borda azul ao clicar */
-    font-size: 16px; /* tamanho do texto */
-    color: #fff; /* cor do texto digitado */
-    padding: 20px 45px 20px 20px; /* espaço interno (direita maior pro ícone) */
+    width: 100%;
+    height: 100%;
+
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 40px;
+
+    outline: none;
+    font-size: 16px;
+    color: #fff;
+
+    padding: 20px 45px 20px 20px;
 }
 
-/* Placeholder (texto dentro do input) */
+/* Placeholder */
 .input-box input::placeholder {
-    color: #C5C5C5; /* cor cinza */
+    color: #C5C5C5;
 }
 
-/* Ícone dentro do input */
+/* Foco (UX melhor) */
+.input-box input:focus {
+    border-color: #fff;
+    box-shadow: 0 0 5px rgba(255,255,255,0.5);
+}
+
+/* Ícone */
 .input-box i {
-    position: absolute; /* posiciona dentro da caixa */
-    right: 20px; /* distância da direita */
-    top: 50%; /* centraliza verticalmente */
-    transform: translateY(-50%); /* ajuste fino de centralização */
-    font-size: 20px; /* tamanho do ícone */
-    color: #C5C5C5; /* cor do ícone */
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #C5C5C5;
 }
 
-/* Seção lembrar senha */
+/* Lembrar / esquecer */
 .remember-forgot {
-    display: flex; /* organiza lado a lado */
-    justify-content: space-between; /* separa os itens */
-    align-items: center; /* alinha verticalmente */
-    margin: 15px 0; /* espaçamento */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px 0;
 }
 
-/* Checkbox */
 .remember-forgot label input {
-    accent-color: #fff; /* cor do checkbox */
-    margin-right: 5px; /* espaço entre checkbox e texto */
+    accent-color: #fff;
+    margin-right: 5px;
 }
 
-/* Link "esqueci senha" */
 .remember-forgot a {
-    color: #C5C5C5; /* cor do link */
-    text-decoration: none; /* remove sublinhado */
+    color: #C5C5C5;
+    text-decoration: none;
 }
 
-/* Hover do link */
 .remember-forgot a:hover {
-    text-decoration: underline; /* sublinha ao passar o mouse */
+    text-decoration: underline;
 }
 
-/* Botão de login */
+/* Botão */
 .login {
-    width: 100%; /* ocupa toda largura */
-    height: 50px; /* altura fixa */
-    background-color: transparent; /* transparente */
-    border: none; /* sem borda */
-    border-radius: 40px; /* arredondado */
-    outline: none; /* remove contorno */
-    font-size: 16px; /* tamanho do texto */
-    color: #333; /* cor do texto */
-    cursor: pointer; /* cursor de clique */
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* sombra leve */
-    margin: 15px 0; /* espaçamento */
+    width: 100%;
+    height: 50px;
+
+    border: none;
+    border-radius: 40px;
+
+    font-size: 16px;
+    cursor: pointer;
+
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    margin: 15px 0;
+
+    transition: 0.3s;
 }
 
-/* Hover do botão */
 .login:hover {
-    background-color: transparent; /* mantém transparente */
-    border: 2px solid rgba(255, 255, 255, 0.2); /* adiciona borda */
-    color: #fff; /* muda cor do texto */
-    transition: 0.3s; /* animação suave */
+    background: rgba(255, 255, 255, 0.4);
 }
 
-/* Texto de cadastro */
+/* Link cadastro */
 .register-link {
-    font-size: 14px; /* texto menor */
-    text-align: center; /* centraliza */
-    margin: 20px 0 15px; /* espaçamento */
+    font-size: 14px;
+    text-align: center;
+    margin: 20px 0 15px;
 }
 
-/* Link de cadastro */
 .register-link a {
-    color: #C5C5C5; /* cor do link */
-    text-decoration: none; /* remove sublinhado */
-    font-weight: 600; /* deixa mais forte */
+    color: #C5C5C5;
+    text-decoration: none;
+    font-weight: 600;
 }
 
-/* Hover do link */
 .register-link a:hover {
-    text-decoration: underline; /* sublinha ao passar o mouse */
+    text-decoration: underline;
 }
