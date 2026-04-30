@@ -4,13 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Fonte -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-
-    <!-- Ícones -->
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-
-    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 
     <title>Recuperar Senha</title>
@@ -18,7 +13,6 @@
 
 <body>
 
-    <!-- VÍDEO DE FUNDO -->
     <video autoplay muted loop id="bg-video">
         <source src="Video.mp4" type="video/mp4">
     </video>
@@ -48,13 +42,12 @@
             <div class="register-link">
                 <p>
                     Lembrou a senha? 
-                    <a href="/LOGIN/PáginaCadastro/log.html">Voltar ao login</a>
+                    <a href="../PáginaCadastro/log.html">Voltar ao login</a>
                 </p>
             </div>
 
         </form>
     </main>
-</body>
 
     <script>
         const form = document.getElementById("form-recuperacao");
@@ -87,9 +80,12 @@
                 form.reset();
 
                 setTimeout(() => {
-                    window.location.href = "login.html";
+                    window.location.href = "../PáginaCadastro/log.html";
                 }, 2000);
 
             }, 2000);
         });
     </script>
+
+</body>
+</html>
